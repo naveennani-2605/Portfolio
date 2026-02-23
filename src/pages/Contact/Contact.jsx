@@ -87,7 +87,7 @@ function Contact() {
 
                         <p><strong>Email:</strong><a href="mailto:naveennani2605@gmail.com?subject=Contact%20From%20Portfolio&body=Hello%20I%20visited%20your%20website" target="_blank" className="email-link"> Naveennani2605@gmail.com</a></p>
 
-                        <p><strong>Phone:</strong><a href="tel:7416990625" target="blank" rel="noopener noreferrer" className="num-link"> +91 74169 90***</a></p>
+                        <p><strong>Phone:</strong><a href="tel:7416990625" className="num-link"> +91 74169 90***</a></p>
 
                         <p><strong>Location:</strong> Gandi Maisamma Hyderabad, Telangana-500043</p>
 
