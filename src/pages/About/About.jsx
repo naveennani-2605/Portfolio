@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./About.css";
-import profile from "../images/background.jpg";
+import profile from "../images/profile.jpeg";
 import resume from '../About/NaveenResume.pdf';
 
 
