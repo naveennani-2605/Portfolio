@@ -1,0 +1,169 @@
+/* Reset */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.about-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10px;
+    background: #F8FAFC;
+}
+
+.intro-img {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.my-image {
+    flex-shrink: 0;
+}
+
+.my-image .profile {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #E2E8F0;
+    transition: 0.3s ease;
+}
+
+.my-image .profile:hover {
+    transform: scale(1.03);
+    border: 1px solid #E74C3C;
+    box-shadow: 2px 2px 5px #475569;
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: #020617;
+}
+
+.name-color{
+    color: #E74C3C;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.introduction p {
+    max-width: 500px;
+    line-height: 1.7;
+    color: #475569;
+    font-size: 1rem;
+}
+
+.introduction .git-link{
+    text-decoration: none;
+    color: #E74C3C;
+    font-weight: 600;
+}
+
+.highlights{
+    text-decoration: underline;
+    color: #020617;
+}
+
+.socials {
+    display: flex;
+    color: black;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+}
+
+.socials li a .icons{
+    font-size: 32px;
+    color: #020617;
+    transition: 0.3s ease;
+}
+
+.socials li a .icons:hover {
+    color: #E74C3C;
+    transform: scale(1.2);
+}
+
+.download-resume {
+  background-color: #E74C3C;
+  padding: 10px 18px;
+  font-size: 1rem;
+  width: 160px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-resume a {
+  display: inline-block;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s ease;
+}
+
+.download-resume:hover {
+    box-shadow: 3px 3px 0px #020617;
+    transform: scale(1.02)
+}
+
+@media (max-width: 900px) {
+
+    .intro-img {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .my-image .profile {
+        width: 280px;
+        height: 360px;
+    }
+
+    .introduction{
+        display: flex;
+        padding: 0px 30px 0px 30px;
+        align-items: center;
+    }
+
+    .download-resume{
+        margin-top: 30px;
+    }
+
+    .introduction p {
+        max-width: 100%;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .my-image .profile {
+        width: 230px;
+        height: 300px;
+    }
+
+    .resume-btn a {
+        width: 100%;
+        text-align: center;
+    }
+}

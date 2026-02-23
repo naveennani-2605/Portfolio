@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background:
+    linear-gradient(
+      rgba(248, 250, 252, 1),
+      rgba(248, 250, 252, 0.2)
+    ),
+    url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #020617;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.home-title span {
+  color: #E74C3C;
+}
+
+.home-text {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #020617;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-buttons a{
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.explore-btn {
+  background-color:transparent;
+  border-radius: 8px;
+  border: 1px solid #E74C3C;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.explore-btn a {
+  display: inline-block;
+  text-decoration: none;
+  color: #E74C3C;
+  transition: 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #E74C3C;
+}
+
+.explore-btn:hover a{
+  color: #FFFFFF;
+}
+
+.projects-btn {
+  background-color: #E74C3C;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #E74C3C;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projects-btn a {
+  display: inline-block;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s ease;
+}
+
+.projects-btn:hover {
+    box-shadow: 5px 5px 0px #020617;
+    transform: scale(1.02)
+}
+
+@media (max-width: 480px) {
+
+  .home {
+    padding: 30px 15px;
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-text {
+    font-size: 0.95rem;
+  }
+
+  .home-buttons {
+    gap: 15px;
+  }
+
+  .home-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .home-title {
+    font-size: 2.4rem;
+  }
+
+  .home-text {
+    font-size: 1rem;
+  }
+
+  .home-buttons a {
+    min-width: 160px;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .home-title {
+    font-size: 2.8rem;
+  }
+
+  .home-text {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1025px) {
+
+  .home {
+    padding: 60px 80px;
+  }
+
+  .home-title {
+    font-size: 3.4rem;
+  }
+
+  .home-text {
+    font-size: 1.15rem;
+  }
+}

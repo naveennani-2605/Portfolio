@@ -1,0 +1,146 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.skills-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #020617;
+  margin-bottom: 10px;
+}
+
+.skills-subtitle {
+  font-size: 1rem;
+  color: #64748B;
+  margin-bottom: 50px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.skills-grid {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.skills-grid ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+.skills-grid li {
+  background: #FFFFFF;
+
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover */
+
+.skills-grid li:hover {
+  transform: translateY(-8px);
+  border-color: #E74C3C;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon */
+
+.skills-grid img {
+  width: 60px;
+  height: 60px;
+
+  object-fit: contain;
+
+  margin-bottom: 12px;
+}
+
+/* Skill Name */
+
+.skills-grid h4 {
+  font-size: 1.1rem;
+  color: #020617;
+  margin-bottom: 6px;
+}
+
+/* Description */
+
+.skills-grid p {
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.4;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+
+@media (max-width: 900px) {
+
+  .skills-grid ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .skills-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobiles */
+
+@media (max-width: 480px) {
+
+  .skills-grid ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skills-grid li {
+    padding: 20px;
+  }
+
+  .skills-grid img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skills-grid h4 {
+    font-size: 1rem;
+  }
+
+  .skills-grid p {
+    font-size: 0.8rem;
+  }
+}

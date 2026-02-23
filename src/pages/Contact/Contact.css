@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #F8FAFC;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-container h1 {
+    font-size: 2.5rem;
+    color: #020617;
+    margin-bottom: 40px;
+}
+
+.contact {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.contact-info {
+    flex: 1;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    color: #020617;
+}
+
+.contact-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.contact-details {
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-details p {
+    font-size: 0.95rem;
+    color: #020617;
+}
+
+.contact-details strong {
+    color: #E74C3C;
+}
+
+.contact-form {
+    flex: 1;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #E74C3C;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.15);
+}
+
+.contact-form button {
+    background: #E74C3C;
+    color: #FFFFFF;
+    border: 1px solid #E74C3C;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: transparent;
+    color: #E74C3C;
+}
+
+.contact-form p {
+    font-size: 0.9rem;
+    color: #020617;
+}
+
+.email-link,
+.num-link{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-container h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contact-container h1 {
+        font-size: 2rem;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 300px;
+    }
+}
