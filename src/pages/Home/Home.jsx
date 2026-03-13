@@ -6,13 +6,11 @@ function Home() {
 
       <h1 className="home-title">
         Hi, I'm <span>Naveen</span> 👋 <br />
-        Frontend Web Developer
+        MERN Stack Developer
       </h1>
 
       <p className="home-text">
-        I design and develop modern, responsive, and high-performance
-        websites and web applications using the latest technologies.
-        Passionate about creating clean UI with impressive web pages.
+        I design and develop modern, responsive, and high-performance web applications using the MERN stack (MongoDB, Express.js, React, and Node.js). Passionate about building scalable backends and clean, user-friendly interfaces.
       </p>
 
       <div className="home-buttons">

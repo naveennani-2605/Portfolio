@@ -1,6 +1,7 @@
 .projects {
   padding: 90px 10%;
   background-color: #f9f9f9;
+  border-bottom: 0.1px solid black;
 }
 
 .projects-heading {

@@ -8,7 +8,7 @@ import {
 
 import "./About.css";
 import profile from "../images/profile.jpeg";
-import resume from "../About/NaveenResume.pdf";
+import resume from "../About/Resume.pdf";
 
 function About() {
   return (
@@ -24,14 +24,15 @@ function About() {
           <p>
             I am{" "}
             <span className="name-color">Valadasu Naveen</span>, Computer Science
-            Engineering Student and aspiring Frontend Web Developer from
-            MLRITM-Hyderabad. I have hands-on experience in building responsive
-            web applications using React.js, HTML, CSS, JavaScript, and
-            Bootstrap.
+            Engineering Student and aspiring MERN Stack Developer from
+            MLRITM-Hyderabad. I have hands-on experience in building modern and
+            responsive web applications using MongoDB, Express.js, React.js, and
+            Node.js along with HTML, CSS, and JavaScript.
             <span className="highlights">
               {" "}
-              I have developed projects like a personal portfolio website and an
-              Automatic Accident Detection system using deep learning in Python.
+              I have developed projects like a personal portfolio website and
+              full-stack web applications with authentication, APIs, and database
+              integration using the MERN stack.
             </span>{" "}
             You can check them by{" "}
             <a
@@ -41,9 +42,9 @@ function About() {
               rel="noopener noreferrer"
             >
               Clicking Me
-            </a>
-            . I am passionate about learning new technologies and building
-            impactful solutions.
+            </a>.<br />
+            I am passionate about learning new technologies and building
+            scalable and impactful web solutions.
           </p>
 
           <ul className="socials">
@@ -89,7 +90,7 @@ function About() {
           </ul>
 
           <div className="download-resume">
-            <a href={resume} download="Resume_Naveen.pdf">
+            <a href={resume} download="Naveen Resume.pdf">
               Download Resume
             </a>
           </div>

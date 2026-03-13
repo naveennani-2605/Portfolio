@@ -1,32 +1,34 @@
 import "./Navbar.css";
 import { useState, useEffect } from "react";
-import resume from '../Navbar/NaveenResume.pdf';
+import resume from "../Navbar/Resume.pdf";
 
 function Navbar() {
   const [isActive, setIsActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const handleToggle = () => {
-    setIsActive(!isActive);
+    setIsActive((prev) => !prev);
   };
 
   const handleClose = () => {
     setIsActive(false);
   };
 
+  /* Scroll effect */
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  /* Prevent background scroll when menu open */
+  useEffect(() => {
+    document.body.style.overflow = isActive ? "hidden" : "auto";
+  }, [isActive]);
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
@@ -57,8 +59,12 @@ function Navbar() {
 
       {/* Buttons */}
       <div className="nav-buttons">
-        <div className="resume-btn"><a href={resume} download="Resume_Naveen.pdf">Resume</a></div>
-        <div className="contact-btn"><a href="#contact">Contact</a></div>
+        <a className="resume-btn" href={resume} download="Naveen Resume.pdf">
+          Resume
+        </a>
+        <a className="contact-btn" href="#contact">
+          Contact
+        </a>
       </div>
 
     </nav>

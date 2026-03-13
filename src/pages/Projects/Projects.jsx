@@ -8,15 +8,18 @@ function Projects() {
   const projects = [
     {
       img: project1,
-      title: "Accident Detection System",
-      desc: "Developed a deep learning–based accident detection system using Python and computer vision techniques to monitor CCTV footage in tunnels and highways. The system identifies unexpected accidents in real time under low-visibility conditions and automatically alerts authorities."
+      title: "Automatic Accident Detection Using Deep Learning",
+      desc: "Engineered a Deep Learning system to identify traffic accidents in real-time from CCTV footage. Specialized in high-accuracy detection under challenging conditions like low light and motion blur. Leveraged CNNs and Transfer Learning to optimize performance, using OpenCV for video preprocessing and TensorFlow for model deployment. Achieved high Precision/Recall scores to facilitate rapid emergency response.",
+      technologies: ["Python", "TensorFlow", "OpenCV", "CNN", "Computer Vision"]
     },
     {
       img: project2,
-      title: "Portfolio Website",
-      desc: "I developed a personal developer portfolio using React.js, HTML, CSS, and JavaScript. It is a Single Page Application and deployed on Netlify to showcase my skills."
+      title: "Responsive Developer Portfolio",
+      desc: "Designed and architected a high-performance personal portfolio using React.js. Focused on modular component architecture and fluid UI/UX across all device breakpoints using CSS Grid and Flexbox. Integrated a CI/CD pipeline via Vercel for automated deployments, ensuring 99.9% uptime and optimized load speeds.",
+      technologies: ["React.js", "JavaScript", "Tailwind CSS", "Vercel", "Git"]
     }
   ];
+
 
   return (
     <section className="projects" id="projects">
