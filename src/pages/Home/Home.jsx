@@ -18,9 +18,6 @@ function Home() {
     let height = canvas.height = window.innerHeight;
 
     let targetMouse = { x: width / 2, y: height / 2 };
-    let smoothMouse = { x: width / 2, y: height / 2 };
-    let lastMouse = { x: width / 2, y: height / 2 };
-    let globalAlpha = 0;
 
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
