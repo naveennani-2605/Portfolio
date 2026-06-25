@@ -295,11 +295,36 @@
 
 @media (max-width: 860px) {
   .brief-heading {
-    margin: 34px 0 42px;
+    margin: 26px 0 32px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .brief-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .brief-grid article {
+    min-height: auto;
+    padding: 26px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .brief-grid h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+
+  .brief-grid p {
+    margin-top: 0;
+  }
+
+  .brief-grid strong {
+    position: static;
+    margin-top: 8px;
+    display: inline-flex;
   }
 }
 
@@ -317,15 +342,45 @@
     padding: 24px;
     border-radius: 24px;
   }
+
+  .brief-heading p {
+    padding-top: 0;
+    font-size: 0.66rem;
+  }
+
+  .brief-heading h2 {
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.065em;
+  }
+
+  .brief-grid article {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .brief-grid article > span {
+    font-size: 0.72rem;
+  }
+
+  .brief-grid h3 {
+    font-size: 1.18rem;
+  }
+
+  .brief-grid p {
+    font-size: 0.88rem;
+    line-height: 1.62;
+  }
+
+  .brief-grid strong {
+    font-size: 0.58rem;
+    line-height: 1.4;
+  }
 }
 
 @media (max-width: 380px) {
   .brief-grid article {
-    padding: 22px;
-  }
-
-  .brief-grid strong {
-    left: 22px;
-    bottom: 22px;
+    padding: 20px;
   }
 }
