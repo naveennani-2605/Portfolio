@@ -1,48 +1,40 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBolt, faEnvelope, faLocationDot, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "./Contact.css";
 
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/valadasu-naveen",
+    icon: "linkedin",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/naveennani-2605",
+    icon: "github",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/naveennani_006/",
+    icon: "instagram",
+  },
+];
+
+const socialIcons = {
+  github: faGithub,
+  instagram: faInstagram,
+  linkedin: faLinkedin,
+};
+
 function Contact() {
-  const [result, setResult] = useState("");
-  const [errors, setErrors] = useState({});
-  const [success, setSuccess] = useState(false);
+  const [formState, setFormState] = useState("");
 
-  const validate = (formData) => {
-    const newErrors = {};
-
-    const name = formData.get("name").trim();
-    const email = formData.get("email").trim();
-    const message = formData.get("message").trim();
-
-    if (!name || name.length < 2) {
-      newErrors.name = "Name must be at least 2 characters";
-    }
-
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email";
-    }
-
-    if (!message || message.length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
-    }
-
-    return newErrors;
-  };
-
-  const onSubmit = async (event) => {
+  const submitContact = async (event) => {
     event.preventDefault();
-
+    setFormState("Sending...");
     const formData = new FormData(event.target);
-
-    const validationErrors = validate(formData);
-
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    setErrors({});
-    setResult("Sending...");
-
     formData.append("access_key", "e402ded1-0edd-4e56-a14e-948b17669652");
 
     try {
@@ -50,100 +42,58 @@ function Contact() {
         method: "POST",
         body: formData,
       });
-
       const data = await response.json();
-
       if (data.success) {
-        setResult("🎉 Congrats! Form Submitted Successfully");
-        setSuccess(true);
+        setFormState("Form submitted successfully.");
         event.target.reset();
       } else {
-        console.log("Error", data);
-        setResult(data.message || "Something went wrong!");
-        setSuccess(false);
+        setFormState("Something went wrong. Please try again.");
       }
-    } catch (err) {
-      console.error(err);
-      setResult("Something went wrong! Please try again.");
-      setSuccess(false);
+    } catch {
+      setFormState("Something went wrong. Please try again.");
     }
   };
 
-  // Auto refresh after success
-  useEffect(() => {
-    let timer;
-
-    if (success) {
-      timer = setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-    }
-
-    return () => clearTimeout(timer);
-  }, [success]);
-
   return (
-    <section className="contact-container" id="contact">
-      <h1>CONTACT ME</h1>
+    <>
+      <section className="manifesto">
+        <div className="manifesto-label" data-reveal>HOW I WORK</div>
+        <div className="manifesto-text" data-reveal>
+          <span>UNDERSTAND THE PROBLEM.</span>
+          <span>DESIGN THE FLOW.</span>
+          <span>BUILD, TEST, IMPROVE.</span>
+        </div>
+        <div className="manifesto-orbit"><FontAwesomeIcon icon={faBolt} /></div>
+      </section>
 
-      <div className="contact">
-        <div className="contact-info">
-          <h2>Let’s Connect</h2>
-
-          <p className="contact-desc">
-            Feel free to reach out to me for project discussions, collaborations,
-            internships, or any professional opportunities. I’m always open to
-            meaningful conversations and new ideas. You can directly contact me
-            by clicking on email or phone number.
-          </p>
-
+      <section className="contact" id="contact">
+        <div className="contact-pitch" data-reveal>
+          <div className="section-code">04 / CONTACT</div>
+          <p>HIRING? BUILDING? EXPLORING?</p>
+          <h2>Have a role, project, or idea? Let’s talk.</h2>
           <div className="contact-details">
-            <p>
-              <strong>Email:</strong>
-              <a
-                href="mailto:naveennani2605@gmail.com?subject=Contact%20From%20Portfolio&body=Hello%20I%20visited%20your%20website"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="email-link"
-              >
-                {" "}
-                Naveennani2605@gmail.com
+            <a href="mailto:naveennani2605@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> naveennani2605@gmail.com</a>
+            <span><FontAwesomeIcon icon={faLocationDot} /> Hyderabad, India</span>
+          </div>
+          <div className="socials">
+            {socialLinks.map((link) => (
+              <a href={link.href} key={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
+                <FontAwesomeIcon icon={socialIcons[link.icon]} />
               </a>
-            </p>
-
-            <p>
-              <strong>Phone:</strong>
-              <a href="tel:7416990625" className="num-link">
-                {" "}
-                +91 74169 90***
-              </a>
-            </p>
-
-            <p>
-              <strong>Location:</strong> Gandi Maisamma Hyderabad,
-              Telangana-500043
-            </p>
+            ))}
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={onSubmit}>
-          <input type="text" name="name" placeholder="Your Name" />
-          {errors.name && <span style={{ color: "red" }}>{errors.name}</span>}
-
-          <input type="email" name="email" placeholder="Your Email" />
-          {errors.email && <span style={{ color: "red" }}>{errors.email}</span>}
-
-          <textarea name="message" rows="5" placeholder="Your Message" />
-          {errors.message && (
-            <span style={{ color: "red" }}>{errors.message}</span>
-          )}
-
-          <button type="submit">Send Message</button>
-
-          {result && <p style={{ marginTop: "10px" }}>{result}</p>}
+        <form className="message-panel" onSubmit={submitContact} data-reveal>
+          <div className="panel-head"><span>NEW MESSAGE</span><i /></div>
+          <label>01 / YOUR NAME<input type="text" name="name" placeholder="Who am I speaking with?" minLength="2" required /></label>
+          <label>02 / YOUR EMAIL<input type="email" name="email" placeholder="Where can I reply?" required /></label>
+          <label>03 / MESSAGE<textarea name="message" rows="6" placeholder="Tell me about the role, project, or collaboration." minLength="10" required /></label>
+          <button type="submit">Submit Form <FontAwesomeIcon icon={faPaperPlane} /></button>
+          {formState && <span className="form-state" role="status">{formState}</span>}
         </form>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

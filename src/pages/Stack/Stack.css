@@ -1,0 +1,146 @@
+.stack-console {
+  overflow: hidden;
+}
+
+.console-head {
+  height: 52px;
+  padding: 0 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.64rem;
+  font-weight: 850;
+}
+
+.console-head span:last-child {
+  color: #1f9d5b;
+}
+
+.console-command {
+  padding: 30px 30px 18px;
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.console-command b {
+  margin-right: 10px;
+  color: var(--crimson);
+}
+
+.stack-cloud {
+  padding: 20px 30px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stack-cloud span {
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.76rem;
+  font-weight: 850;
+  animation: skillEnter 0.5s calc(var(--i) * 45ms) both paused;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.stack-console.in-view .stack-cloud span {
+  animation-play-state: running;
+}
+
+.stack-cloud span:hover {
+  color: white;
+  background: var(--dark);
+  transform: translateY(-4px);
+}
+
+.console-output {
+  padding: 22px 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.68rem;
+  font-weight: 850;
+}
+
+.console-output svg {
+  color: var(--crimson);
+}
+
+.evidence-row {
+  margin-top: 68px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+}
+
+.evidence-row article {
+  min-height: 170px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--line);
+}
+
+.evidence-row article:last-child {
+  border-right: 0;
+}
+
+.evidence-row strong {
+  font-size: clamp(2.5rem, 4.8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.09em;
+}
+
+.evidence-row span {
+  max-width: 140px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .console-output {
+    flex-direction: column;
+  }
+
+  .evidence-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .evidence-row article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .evidence-row article:nth-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 560px) {
+  .stack-cloud,
+  .console-command,
+  .console-output {
+    padding-inline: 18px;
+  }
+
+  .evidence-row {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence-row article {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .evidence-row article:last-child {
+    border-bottom: 0;
+  }
+}

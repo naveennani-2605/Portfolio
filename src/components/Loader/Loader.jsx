@@ -1,11 +1,15 @@
-import './Loader.css';
+import "./Loader.css";
 
-const Loader = () => {
+function Loader() {
   return (
-    <div id="loader">
-      <div className="spinner"></div>
+    <div className="boot">
+      <div className="boot-code">NAVEEN</div>
+      <div className="boot-copy">
+        <span>Preparing the experience</span>
+        <div><i /></div>
+      </div>
     </div>
   );
-};
+}
 
 export default Loader;

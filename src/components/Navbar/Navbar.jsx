@@ -1,73 +1,50 @@
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
-import { useState, useEffect } from "react";
-import resume from "../Navbar/Resume.pdf";
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
+  { label: "Journey", href: "#log" },
+  { label: "Stack", href: "#stack" },
+  { label: "Contact", href: "#contact" },
+];
 
 function Navbar() {
-  const [isActive, setIsActive] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleToggle = () => {
-    setIsActive((prev) => !prev);
-  };
-
-  const handleClose = () => {
-    setIsActive(false);
-  };
-
-  /* Scroll effect */
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
     };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  /* Prevent background scroll when menu open */
-  useEffect(() => {
-    document.body.style.overflow = isActive ? "hidden" : "auto";
-  }, [isActive]);
+  }, [menuOpen]);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <>
+      {menuOpen && <button className="nav-backdrop" aria-label="Close menu" onClick={() => setMenuOpen(false)} />}
 
-      {/* Logo */}
-      <a href="#home" className="nav-logo">
-        Portfolio<span className="dot">.</span>
-      </a>
-
-      {/* Mobile Toggle */}
-      <button
-        className={`navbar-toggle ${isActive ? "active" : ""}`}
-        onClick={handleToggle}
-      >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </button>
-
-      {/* Links */}
-      <ul className={`nav-links ${isActive ? "active" : ""}`}>
-        <li><a href="#home" onClick={handleClose}>Home</a></li>
-        <li><a href="#about" onClick={handleClose}>About</a></li>
-        <li><a href="#skills" onClick={handleClose}>Skills</a></li>
-        <li><a href="#projects" onClick={handleClose}>Projects</a></li>
-        <li><a href="#contact" onClick={handleClose}>Contact</a></li>
-      </ul>
-
-      {/* Buttons */}
-      <div className="nav-buttons">
-        <a className="resume-btn" href={resume} download="Naveen Resume.pdf">
-          Resume
+      <header className="topbar">
+        <a className="wordmark" href="#top" aria-label="Naveen home">
+          NAVEEN<span>✦</span>
         </a>
-        <a className="contact-btn" href="#contact">
-          Contact
+        <div className="topbar-status"><i /> PORTFOLIO EXPERIENCE · 2026</div>
+        <nav className={menuOpen ? "topnav open" : "topnav"}>
+          {navLinks.map((link) => (
+            <a href={link.href} key={link.href} onClick={() => setMenuOpen(false)}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <a className="resume-pill" href="/Resume.pdf" download="Valadasu_Naveen_Resume.pdf">
+          Résumé <FontAwesomeIcon icon={faArrowDown} />
         </a>
-      </div>
-
-    </nav>
+        <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">
+          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+        </button>
+      </header>
+    </>
   );
 }
 

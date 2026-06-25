@@ -1,102 +1,84 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-
+import profile from "../../assets/images/profile.jpeg";
 import "./About.css";
-import profile from "../images/profile.jpeg";
-import resume from "../About/Resume.pdf";
+
+const briefCards = [
+  {
+    no: "01",
+    title: "I build both sides.",
+    text: "Responsive React frontends connected to structured Node, Express, and MongoDB backends.",
+    label: "FRONTEND ↔ BACKEND",
+  },
+  {
+    no: "02",
+    title: "I care about the system.",
+    text: "Authentication, API design, data modeling, Git workflows, deployment, and maintainability matter too.",
+    label: "UX ↔ ARCHITECTURE",
+  },
+  {
+    no: "03",
+    title: "I keep shipping.",
+    text: "Two internships, production-style applications, peer reviews, sprint delivery, and live deployments.",
+    label: "LEARNING ↔ DELIVERY",
+  },
+];
 
 function About() {
   return (
-    <section className="about-container" id="about">
-      <div className="intro-img">
-        <div className="my-image">
-          <img src={profile} alt="Profile" className="profile" />
+    <>
+      <section className="about" id="about">
+        <div className="about-visual" data-reveal>
+          <div className="about-photo-card">
+            <img src={profile} alt="Valadasu Naveen" />
+            <div className="photo-badge">VN</div>
+          </div>
+          <div className="floating-note note-one">React</div>
+          <div className="floating-note note-two">Node.js</div>
+          <div className="floating-note note-three">MongoDB</div>
         </div>
 
-        <div className="introduction">
-          <h1 className="about-title">ABOUT ME</h1>
-
-          <p>
-            I am{" "}
-            <span className="name-color">Valadasu Naveen</span>, Computer Science
-            Engineering Student and aspiring MERN Stack Developer from
-            MLRITM-Hyderabad. I have hands-on experience in building modern and
-            responsive web applications using MongoDB, Express.js, React.js, and
-            Node.js along with HTML, CSS, and JavaScript.
-            <span className="highlights">
-              {" "}
-              I have developed projects like a personal portfolio website and
-              full-stack web applications with authentication, APIs, and database
-              integration using the MERN stack.
-            </span>{" "}
-            You can check them by{" "}
-            <a
-              href="https://github.com/naveennani-2605"
-              className="git-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Clicking Me
-            </a>.<br />
-            I am passionate about learning new technologies and building
-            scalable and impactful web solutions.
+        <div className="about-copy">
+          <div className="section-code" data-reveal>00 / ABOUT ME</div>
+          <h2 data-reveal>Hi, I’m Naveen — a CSE student designing and building all kinds of websites.</h2>
+          <p data-reveal>
+            I create normal pages, landing pages, product pages, portfolios, dashboards, and full-stack web applications. I care about clean layouts,
+            smooth responsive design, useful interactions, secure APIs, and websites that feel professional from the first click.
           </p>
-
-          <ul className="socials">
-            <li>
-              <a
-                href="https://www.facebook.com/profile.php?id=100025798393569&sk=photos"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon className="icons" icon={faFacebook} />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://www.linkedin.com/in/valadasu-naveen-58690a2a4/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon className="icons" icon={faLinkedin} />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://github.com/naveennani-2605"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon className="icons" icon={faGithub} />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://www.instagram.com/naveennani_006/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon className="icons" icon={faInstagram} />
-              </a>
-            </li>
-          </ul>
-
-          <div className="download-resume">
-            <a href={resume} download="Naveen Resume.pdf">
-              Download Resume
+          <div className="about-intro" data-reveal>
+            <span>More about me</span>
+            <p>
+              I’m Valadasu Naveen, a Computer Science student from Hyderabad who enjoys turning ideas into polished web experiences.
+              I like designing the layout first, understanding the user flow, and then building the frontend and backend with clean,
+              practical code.
+            </p>
+            <p>
+              My focus is simple: make websites look good, work smoothly on every screen, and feel reliable when people actually use them.
+              I’m currently growing through internships, real projects, and constant practice with React, Node.js, Express, and MongoDB.
+            </p>
+            <a href="https://www.linkedin.com/in/valadasu-naveen/" target="_blank" rel="noreferrer">
+              View my LinkedIn profile
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="brief">
+        <div className="section-code" data-reveal>00 / QUICK INTRO</div>
+        <div className="brief-heading" data-reveal>
+          <p>WHAT I CARE ABOUT</p>
+          <h2>Clean interfaces, reliable systems, and work that feels easy to use.</h2>
+        </div>
+        <div className="brief-grid">
+          {briefCards.map((card) => (
+            <article data-reveal key={card.no}>
+              <span>{card.no}</span>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+              <strong>{card.label}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
 

@@ -1,33 +1,44 @@
-#loader {
+.boot {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-content: center;
+  gap: 22px;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.boot-code {
+  font-size: clamp(3.4rem, 11vw, 9rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.085em;
+  animation: bootCode 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.boot-copy {
+  width: min(360px, 75vw);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.boot-copy div {
+  height: 4px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.boot-copy i {
+  display: block;
   width: 100%;
   height: 100%;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-#loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.spinner {
-  width: 60px;
-  height: 60px;
-  border: 6px solid #444;
-  border-top: 6px solid #E74C3C;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--dark), var(--crimson), var(--gold));
+  animation: bootLoad 0.95s ease both;
 }
