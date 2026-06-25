@@ -29,13 +29,20 @@ function Navbar() {
         <a className="wordmark" href="#top" aria-label="Naveen home">
           NAVEEN<span>✦</span>
         </a>
-        <div className="topbar-status"><i /> PORTFOLIO EXPERIENCE · 2026</div>
         <nav className={menuOpen ? "topnav open" : "topnav"}>
           {navLinks.map((link) => (
             <a href={link.href} key={link.href} onClick={() => setMenuOpen(false)}>
               {link.label}
             </a>
           ))}
+          <a
+            className="mobile-resume-pill"
+            href="/Resume.pdf"
+            download="Valadasu_Naveen_Resume.pdf"
+            onClick={() => setMenuOpen(false)}
+          >
+            Download Résumé <FontAwesomeIcon icon={faArrowDown} />
+          </a>
         </nav>
         <a className="resume-pill" href="/Resume.pdf" download="Valadasu_Naveen_Resume.pdf">
           Résumé <FontAwesomeIcon icon={faArrowDown} />

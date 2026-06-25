@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (loading) return undefined;
+    if (loading) return;
 
     const observer = new IntersectionObserver(
       (entries) => {

@@ -54,9 +54,14 @@ function About() {
               My focus is simple: make websites look good, work smoothly on every screen, and feel reliable when people actually use them.
               I’m currently growing through internships, real projects, and constant practice with React, Node.js, Express, and MongoDB.
             </p>
-            <a href="https://www.linkedin.com/in/valadasu-naveen/" target="_blank" rel="noreferrer">
-              View my LinkedIn profile
-            </a>
+            <div className="about-actions">
+              <a href="https://www.linkedin.com/in/valadasu-naveen/" target="_blank" rel="noreferrer">
+                View my LinkedIn profile
+              </a>
+              <a href="/Resume.pdf" download="Valadasu_Naveen_Resume.pdf">
+                Download Resume
+              </a>
+            </div>
           </div>
         </div>
       </section>
