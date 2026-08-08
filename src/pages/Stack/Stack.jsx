@@ -27,8 +27,8 @@ const skills = [
   "Render",
 
   // Languages
-  "Java",
-  "Python"
+  "Java(Basics)",
+  "Python(Basics)"
 ];
 
 function Stack() {

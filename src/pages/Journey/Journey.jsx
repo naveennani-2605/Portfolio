@@ -4,22 +4,28 @@ import "./Journey.css";
 
 const experience = [
   {
-    date: "MAY 2026 → NOW",
-    company: "THIRANEX",
-    role: "Full Stack Web Development Intern",
-    note: "Shipping responsive React components and integrating live Node.js / Express product features with a remote engineering team.",
+    date: "JULY 2026 → NOW",
+    company: "FlyRank AI",
+    role: "Front-End AI Engineer - Internship",
+    note: "Currently interning at FlyRank AI as an AI intern, focusing on Front-end AI Engineering.",
     tag: "CURRENT",
   },
   {
     date: "MAY → JUN 2026",
+    company: "THIRANEX",
+    role: "Full Stack Web Development Internship",
+    note: "Shipping responsive React components and integrating live Node.js / Express product features with a remote engineering team.",
+  },
+  {
+    date: "MAY → JUN 2026",
     company: "FUTURE INTERNS",
-    role: "Full Stack Web Development Intern",
+    role: "Full Stack Web Development Internship",
     note: "Delivered MERN features across sprint cycles and improved bug turnaround through peer review and disciplined Git workflows.",
   },
   {
     date: "2024 → PRESENT",
     company: "INDEPENDENT",
-    role: "Web Designer & Full Stack Developer",
+    role: "Web Designer & Full Stack Developer (MERN Stack)",
     note: "Designing landing pages, portfolio pages, product pages, dashboards, and practical full-stack web applications while deepening software engineering foundations.",
   },
 ];
