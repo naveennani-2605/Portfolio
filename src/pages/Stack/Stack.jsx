@@ -3,32 +3,46 @@ import { faBolt, faCheck } from "@fortawesome/free-solid-svg-icons";
 import "./Stack.css";
 
 const skills = [
-  // Core Full-Stack (MERN)
+  // Full-Stack Development
   "React.js",
+  "React Router",
   "Node.js",
   "Express.js",
   "MongoDB",
+  "MongoDB Atlas",
+  "Mongoose",
   "JavaScript (ES6+)",
-
-  // API & Auth
-  "REST APIs",
-  "JWT Authentication",
 
   // Frontend
   "HTML5",
   "CSS3",
+  "Bootstrap",
+  "Tailwind CSS",
   "Responsive Web Design",
+  "Axios",
+
+  // APIs & Authentication
+  "REST APIs",
+  "JWT Authentication",
+
+  // AI Engineering
+  "Claude",
+  "Claude Code",
+  "Claude API",
+  "MCP",
+  "AI Agents",
 
   // Tools & Deployment
   "Git",
   "GitHub",
   "Postman",
   "Vercel",
+  "Netlify",
   "Render",
+  "CI/CD",
 
-  // Languages
-  "Java(Basics)",
-  "Python(Basics)"
+  // Programming
+  "Python"
 ];
 
 function Stack() {
@@ -58,10 +72,10 @@ function Stack() {
       </div>
 
       <div className="evidence-row">
-        <article data-reveal><strong>10+</strong><span>responsive components delivered</span></article>
-        <article data-reveal><strong>3+</strong><span>deployed web products</span></article>
-        <article data-reveal><strong>2×</strong><span>full-stack internships</span></article>
-        <article data-reveal><strong>3</strong><span>technical certifications</span></article>
+        <article data-reveal><strong>20+</strong><span>responsive components delivered</span></article>
+        <article data-reveal><strong>4+</strong><span>deployed web products</span></article>
+        <article data-reveal><strong>3×</strong><span>full-stack internships</span></article>
+        <article data-reveal><strong>5+</strong><span>technical certifications</span></article>
       </div>
     </section>
   );

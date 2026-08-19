@@ -40,7 +40,7 @@ function Home() {
           </div>
           <div className="hero-card-grid">
             <article><b>3+</b><span>Projects</span></article>
-            <article><b>2×</b><span>Internships</span></article>
+            <article><b>3×</b><span>Internships</span></article>
             <article><b>2027</b><span>B.Tech CSE</span></article>
             <article><b>MERN</b><span>Main stack</span></article>
           </div>
